@@ -391,9 +391,81 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
 
-        <footer style={{ textAlign: 'center', padding: '40px', background: '#333', color: '#fff', marginTop: 'auto' }}>
-          <p>© 2026 Bloom & Petal - Developed by Pamodya Nethmi</p>
-        </footer>
+        <footer style={{ 
+  backgroundColor: '#333', 
+  color: 'white', 
+  padding: '40px 50px', 
+  marginTop: '50px' 
+}}>
+  <div style={{ 
+    display: 'flex', 
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
+    flexWrap: 'wrap', 
+    maxWidth: '1200px', 
+    margin: '0 auto',
+    gap: '20px'
+  }}>
+    
+    {/* වම් පැත්ත - විස්තර */}
+    <div style={{ textAlign: 'left' }}>
+      <h3 style={{ 
+        fontSize: '1.5rem', // Font size එක අඩු කළා
+        color: '#d63384', 
+        marginBottom: '10px',
+        fontWeight: 'bold' 
+      }}>
+        Bloom & Petal
+      </h3>
+      <p style={{ margin: '5px 0', fontSize: '0.9rem' }}>📞 +94 71 234 5678</p>
+      <p style={{ margin: '5px 0', fontSize: '0.9rem' }}>✉️ info@bloomandpetal.com</p>
+    </div>
+
+    {/* දකුණු පැත්ත - Social Media Icons (Direct SVG) */}
+<div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+  
+  {/* Facebook */}
+  <a href="#" style={{ color: 'white', textDecoration: 'none' }}>
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+    </svg>
+  </a>
+
+  {/* Instagram */}
+  <a href="#" style={{ color: 'white', textDecoration: 'none' }}>
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </svg>
+  </a>
+
+  {/* WhatsApp */}
+  <a href="#" style={{ color: 'white', textDecoration: 'none' }}>
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+    </svg>
+  </a>
+
+  {/* Web / Globe Icon */}
+<a href="#" style={{ color: 'white', textDecoration: 'none' }}>
+  <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zM11 4.072V6h2V4.072c3.155.451 5.755 2.766 6.551 5.928h-1.636a5.003 5.003 0 0 0-9.83 0H6.449C7.245 6.838 9.845 4.523 11 4.072zM12 8a4 4 0 0 1 3.919 3.165h-7.838A4 4 0 0 1 12 8zm-5.551 5.835h1.636a5.003 5.003 0 0 0 9.83 0h1.636c-.796 3.162-3.396 5.477-6.551 5.928V18h-2v1.928c-3.155-.451-5.755-2.766-6.551-5.928z"/>
+  </svg>
+</a>
+</div>
+
+  </div>
+
+  <div style={{ 
+    textAlign: 'center', 
+    borderTop: '1px solid #555', 
+    marginTop: '30px', 
+    paddingTop: '20px', 
+    fontSize: '0.8rem',
+    color: '#bbb'
+  }}>
+    © 2026 Bloom & Petal by Pamodya Nethmi. All Rights Reserved.
+  </div>
+</footer>
       </div>
     </Router>
   );
