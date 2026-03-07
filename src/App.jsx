@@ -1,78 +1,210 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import flowerVideo from './assets/4127679-hd_1280_720_60fps.mp4';
+import f1 from './assets/IMG_3069.webp';
+import f2 from './assets/il_1080xN.5352833005_2ahe.avif';
+import f3 from './assets/20220207030334_file_62008c06eeb6c_62008c76db802.avif';
+import f4 from './assets/HS1001_SUNFLOWER_BOUQUET.webp';
+import f5 from './assets/Gorgeous.webp';
+import f6 from './assets/fz0145.jpg';
+import f7 from './assets/145_1_1.webp';
+import f8 from './assets/A079-Rose-Bouquet-White-Rose-Bouquet-SweetLife-Co.-florist-penang-penang-florist-florist-in-penang-flower-delivery-penang-bouquet-delivery-penang-2.jpg';
+import f9 from './assets/3.1.jpeg';
+import f10 from './assets/white_dahlia_bouquet_62bb5f565d797.jpg.webp';
+import f11 from './assets/DaisyBouquet-Ssize.webp';
+import f12 from './assets/IMG_23Mar2020at44935PM-1000x1000.jpg';
+import f13 from './assets/File_000_1.webp';
+import f14 from './assets/place-for-wedding-ceremony-in-garden-outdoors-cop-2023-11-27-04-56-09-utc.jpg';
+import f15 from './assets/images.jpg';
+import f16 from './assets/Four-Seasons-Hotel-Singapore-pink-peach-red-white-4.webp';
+import f17 from './assets/16669489_494707777268_0.56393700-1500204564.jpg';
+import f18 from './assets/ef80-128-seru-strausi.jpg';
+import f19 from './assets/mrroses_sympathy-flowers_coffin-centerpiece_medium_white-roses.webp';
+import f20 from './assets/hq720.jpg';
+import f21 from './assets/03c98418272a8b734e79af982a153422.jpg';
+import f22 from './assets/fresh-flower-diwali-decorations.jpg';
+import f23 from './assets/images (1).jpg';
+import f24 from './assets/sicily-img-1.jpg';
+import f25 from './assets/Stage-Deco-A.jpg';
+import f26 from './assets/podium-exclusive-flower-decorations.jpg';
+import f27 from './assets/images (2).jpg';
+import f28 from './assets/11062b_c9b7ce072e90493a9790c7ecd863121e~mv2.avif';
+import f29 from './assets/20250602213204_file_683e1854c8fdb.avif';
 
-// --- Home Page Component ---
+
+
 const Home = ({ flowers, addToCart, searchTerm, setSearchTerm }) => {
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
+  const events = [
+    { 
+      id: 1, title: "Wedding Decoration", 
+      mainImg: f16, 
+      desc: "Flowers bring beauty, romance, and elegance to every wedding. Our wedding floral decorations are carefully designed to match your theme and create a magical atmosphere for your special day. From bridal bouquets to stage decorations and table arrangements, we use fresh, high-quality flowers to make your wedding unforgettable.",
+      gallery: [
+        f12,
+        f13,
+        f14,
+        f15
+      ]
+    },
+    { 
+      id: 2, title: "Sympathy Flowers", 
+      mainImg: f17, 
+      desc: "Funeral flowers are a respectful way to express sympathy and honor a loved one’s memory. Our elegant arrangements are designed to offer comfort and show heartfelt condolences.",
+      gallery: [
+        f18,
+        f19
+      ]
+    },
+    { 
+      id: 3, title: "Religious Decoration", 
+      mainImg: f20, 
+      desc: "We provide fresh and meaningful flowers for religious decorations, helping create a calm and respectful environment for prayers, blessings, and special spiritual occasions.",
+      gallery: [
+        f21,
+        f22,
+        f23,
+        f24
+      ]
+    },
+    { 
+      id: 4, title: "Corporate Event Decoration", 
+      mainImg: f25, 
+      desc: "Our flower stage decorations bring elegance and charm to any celebration. With creative designs and fresh flowers, we transform stages into stunning focal points for your event.",
+      gallery: [
+        f26,
+        f27
+      ]
+    }
+  ];
+
   const filteredFlowers = flowers.filter(flower =>
     flower.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div style={{ width: '100%' }}>
-      <header style={{ 
-        textAlign: 'center', padding: '120px 20px', width: '100%', minHeight: '70vh', 
-        display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
-        background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1519378013359-44f01c34a7d2?w=1200&q=80")', 
-        backgroundSize: 'cover', backgroundPosition: 'center', color: 'white'
-      }}>
-        <h1 style={{ fontSize: '3.5rem', marginBottom: '10px' }}>Freshness Delivered to Your Doorstep</h1>
-        <p style={{ fontSize: '1.5rem' }}>Premium quality flowers for your loved ones.</p>
-        <input 
-          type="text" placeholder="Search for flowers..." value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ 
-            marginTop: '30px', padding: '12px 25px', width: '80%', maxWidth: '500px', 
-            borderRadius: '30px', border: 'none', fontSize: '1rem', outline: 'none'
-          }}
-        />
-      </header>
+      {/* 1. Hero Section with Video Background */}
+<header style={{ 
+  position: 'relative', 
+  width: '100%', 
+  height: '75vh', 
+  display: 'flex',  
+  justifyContent: 'center', 
+  alignItems: 'center', 
+  overflow: 'hidden',
+}}>
+  {/* පසුබිම් වීඩියෝව */}
+  <video 
+    autoPlay 
+    loop 
+    muted 
+    playsInline
+    style={{
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      zIndex: 0
+    }}
+  >
+    {/* මල් පෙති වැටෙන ලස්සන වීඩියෝ ලින්ක් එකක් මම පහතින් දාලා තියෙනවා */}
+    <source src={flowerVideo} type="video/mp4" />
+  </video>
 
-      <main style={{ padding: '60px 50px' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '40px', fontSize: '2rem', color: '#333' }}>Our Collections</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', maxWidth: '1200px', margin: '0 auto' }}>
+  {/* වීඩියෝ එක උඩ අකුරු පැහැදිලිව පේන්න දාන අඳුරු ලේයර් එක (Overlay) */}
+  <div style={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    zIndex: 0
+  }}></div>
+
+  {/* ශොප් එක ගැන විස්තරය */}
+  <div style={{ zIndex: 1, padding: '0 20px', maxWidth: '800px' }}>
+    <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '15px', textShadow: '2px 2px 10px rgba(0,0,0,0.5)' }}>
+      Bloom & Petal
+    </h1>
+    <p style={{ fontSize: '1.4rem', lineHeight: '1.6', marginBottom: '20px', fontWeight: '300' }}>
+      Welcome to Sri Lanka's finest floral destination. We curate the freshest blooms 
+      to bring elegance and joy to your every occasion. From hand-picked bouquets 
+      to stunning event decors, we deliver nature's beauty right to your heart.
+    </p>
+    
+    {/* Search Bar එක */}
+    <input 
+      type="text" 
+      placeholder="Find your perfect flowers..." 
+      value={searchTerm} 
+      onChange={(e) => setSearchTerm(e.target.value)} 
+      style={{ 
+        padding: '12px 25px', 
+        width: '100%', 
+        maxWidth: '450px', 
+        borderRadius: '30px', 
+        border: 'none', 
+        fontSize: '1rem',
+        outline: 'none',
+        boxShadow: '0 4px 15px rgba(0,0,0,0.3)'
+      }} 
+    />
+  </div>
+</header>
+
+      {/* 2. Flowers For Events */}
+      <section style={{ padding: '60px 50px 20px 50px', textAlign: 'center' }}>
+        <h2>Flowers For Events</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', maxWidth: '1200px', margin: '30px auto' }}>
+          {events.map(event => (
+            <div key={event.id} style={{ background: '#f9f9f9', padding: '15px', borderRadius: '15px' }}>
+              <img src={event.mainImg} style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '10px' }} alt={event.title} />
+              <h3 style={{ margin: '10px 0' }}>{event.title}</h3>
+              <button onClick={() => setSelectedEvent(event)} style={{ padding: '8px 15px', borderRadius: '20px', border: '1px solid #d63384', background: 'none', color: '#d63384', cursor: 'pointer' }}>Browse</button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. Popup Modal with Gallery */}
+      {selectedEvent && (
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 2000, padding: '20px' }}>
+          <div style={{ backgroundColor: 'white', padding: '30px', borderRadius: '20px', maxWidth: '500px', width: '100%', textAlign: 'center', position: 'relative' }}>
+            <span onClick={() => setSelectedEvent(null)} style={{ position: 'absolute', top: '10px', right: '15px', fontSize: '25px', cursor: 'pointer' }}>&times;</span>
+            <h2 style={{ color: '#d63384' }}>{selectedEvent.title}</h2>
+            <p style={{ margin: '15px 0' }}>{selectedEvent.desc}</p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+              {selectedEvent.gallery.map((img, index) => (
+                <img key={index} src={img} style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '10px' }} alt="Gallery" />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 4. Shop Collection */}
+      <main style={{ padding: '20px 50px 60px 50px' }}>
+        <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Our Collection</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '25px', maxWidth: '1200px', margin: '0 auto' }}>
           {filteredFlowers.map(flower => (
-            <div key={flower.id} style={{ backgroundColor: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 5px 15px rgba(0,0,0,0.08)' }}>
-              <img src={flower.img} alt={flower.name} style={{ width: '100%', height: '250px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px' }}>
+            <div key={flower.id} style={{ background: 'white', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)', overflow: 'hidden' }}>
+              <img src={flower.img} style={{ width: '100%', height: '200px', objectFit: 'cover' }} alt={flower.name} />
+              <div style={{ padding: '15px' }}>
                 <h3>{flower.name}</h3>
-                <p style={{ color: '#d63384', fontWeight: 'bold', fontSize: '1.2rem' }}>Rs. {flower.price}</p>
-                <button 
-                  onClick={() => addToCart(flower)}
-                  style={{ width: '100%', marginTop: '15px', padding: '12px', backgroundColor: '#d63384', border: 'none', color: 'white', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}
-                >
-                  Add to Cart
-                </button>
+                <p>Rs. {flower.price}</p>
+                <button onClick={() => addToCart(flower)} style={{ width: '100%', padding: '10px', background: '#d63384', color: 'white', border: 'none', borderRadius: '5px', marginTop: '10px', cursor: 'pointer' }}>Add to Cart</button>
               </div>
             </div>
           ))}
         </div>
       </main>
-
-      <main style={{ padding: '60px 50px' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '40px', fontSize: '2rem', color: '#333' }}>Our Collections</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', maxWidth: '1200px', margin: '0 auto' }}>
-          {filteredFlowers.map(flower => (
-            <div key={flower.id} style={{ backgroundColor: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 5px 15px rgba(0,0,0,0.08)' }}>
-              <img src={flower.img} alt={flower.name} style={{ width: '100%', height: '250px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px' }}>
-                <h3>{flower.name}</h3>
-                <p style={{ color: '#d63384', fontWeight: 'bold', fontSize: '1.2rem' }}>Rs. {flower.price}</p>
-                <button 
-                  onClick={() => addToCart(flower)}
-                  style={{ width: '100%', marginTop: '15px', padding: '12px', backgroundColor: '#d63384', border: 'none', color: 'white', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </main>
-
     </div>
   );
 };
-
+        
 // --- About Page Component ---
 const About = () => (
   <div style={{ width: '100%', minHeight: '80vh', backgroundColor: '#fff' }}>
@@ -99,8 +231,8 @@ const About = () => (
     }}>
       {/* Image Side */}
       <div style={{ flex: '1', minWidth: '300px' }}>
-        <img 
-          src="11062b_c9b7ce072e90493a9790c7ecd863121e~mv2.avif" 
+        <img
+          src={f28} 
           alt="Our Florist" 
           style={{ width: '100%', borderRadius: '20px', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}
         />
@@ -134,6 +266,7 @@ const About = () => (
     </div>
   </div>
 );
+
 
 // --- Contact Page Component (With Form) ---
 const Contact = () => {
@@ -210,12 +343,18 @@ const Contact = () => {
 // --- Main App Component ---
 function App() {
   const [flowers] = useState([
-    { id: 1, name: "Red Roses", price: 1500, img: "IMG_3069.webp" },
-    { id: 2, name: "White Orchids", price: 2500, img: "il_1080xN.5352833005_2ahe.avif" },
-    { id: 3, name: "Mixed Bouquet", price: 3800, img: "20220207030334_file_62008c06eeb6c_62008c76db802.avif" },
-    { id: 4, name: "Sunflowers", price: 1200, img: "HS1001_SUNFLOWER_BOUQUET.webp" },
-    { id: 5, name: "Lily flowers", price: 1300, img: "Gorgeous.webp" },
-    { id: 3, name: "Mixed Rose Bouquet", price: 3500, img: "fz0145.jpg" },
+    { id: 1, name: "Red Roses", price: 1500, img: f1 },
+    { id: 2, name: "White Orchids", price: 2500, img: f2 },
+    { id: 3, name: "Mixed Bouquet", price: 3800, img: f3 },
+    { id: 4, name: "Sunflowers", price: 1200, img: f4 },
+    { id: 5, name: "Lily flowers", price: 1300, img: f5 },
+    { id: 6, name: "Mixed Roses", price: 3500, img: f6 },
+    { id: 7, name: "Flower Bucket", price: 2500, img: f7 },
+    { id: 8, name: "White Roses", price: 1500, img: f8 },
+    { id: 9, name: "Chrysanthemum", price: 1300, img: f9 },
+    { id: 10, name: "Dahlia", price: 1300, img: f10 },
+    { id: 11, name: "Daisy", price: 1000, img: f11 },
+    { id: 12, name: "Graduation Flower Bouquet", price: 2500, img: f29 },
   ]);
 
   const [cart, setCart] = useState([]);
