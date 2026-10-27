@@ -95,7 +95,7 @@ const Home = ({ flowers, addToCart, searchTerm, setSearchTerm }) => {
   alignItems: 'center', 
   overflow: 'hidden',
 }}>
-  {/* පසුබිම් වීඩියෝව */}
+  
   <video 
     autoPlay 
     loop 
@@ -109,11 +109,11 @@ const Home = ({ flowers, addToCart, searchTerm, setSearchTerm }) => {
       zIndex: 0
     }}
   >
-    {/* මල් පෙති වැටෙන ලස්සන වීඩියෝ ලින්ක් එකක් මම පහතින් දාලා තියෙනවා */}
+   
     <source src={flowerVideo} type="video/mp4" />
   </video>
 
-  {/* වීඩියෝ එක උඩ අකුරු පැහැදිලිව පේන්න දාන අඳුරු ලේයර් එක (Overlay) */}
+  
   <div style={{
     position: 'absolute',
     top: 0,
@@ -124,7 +124,7 @@ const Home = ({ flowers, addToCart, searchTerm, setSearchTerm }) => {
     zIndex: 0
   }}></div>
 
-  {/* ශොප් එක ගැන විස්තරය */}
+  
   <div style={{ zIndex: 1, padding: '0 20px', maxWidth: '800px' }}>
     <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '15px', textShadow: '2px 2px 10px rgba(0,0,0,0.5)' }}>
       Bloom & Petal
@@ -135,7 +135,7 @@ const Home = ({ flowers, addToCart, searchTerm, setSearchTerm }) => {
       to stunning event decors, we deliver nature's beauty right to your heart.
     </p>
     
-    {/* Search Bar එක */}
+    {/* Search Bar */}
     <input 
       type="text" 
       placeholder="Find your perfect flowers..." 
@@ -290,7 +290,7 @@ const Contact = () => {
         margin: '0 auto' 
       }}>
         
-        {/* වම් පැත්ත - Contact Form */}
+        {/* Contact Form */}
         <div style={{ flex: '1', minWidth: '320px', textAlign: 'left', background: '#f9f9f9', padding: '30px', borderRadius: '15px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)' }}>
           <h3 style={{ marginBottom: '20px', color: '#333' }}>Send a Message</h3>
           <form onSubmit={handleSubmit}>
@@ -313,7 +313,7 @@ const Contact = () => {
           {status && <p style={{ marginTop: '20px', color: 'green', textAlign: 'center', fontWeight: 'bold' }}>{status}</p>}
         </div>
 
-        {/* දකුණු පැත්ත - Map & Info */}
+        {/* Map & Info */}
         <div style={{ flex: '1', minWidth: '320px' }}>
           <div style={{ marginBottom: '20px', textAlign: 'left' }}>
             <p>📍 123 Flower Road, Colombo, Sri Lanka</p>
@@ -407,10 +407,10 @@ function App() {
     gap: '20px'
   }}>
     
-    {/* වම් පැත්ත - විස්තර */}
+    
     <div style={{ textAlign: 'left' }}>
       <h3 style={{ 
-        fontSize: '1.5rem', // Font size එක අඩු කළා
+        fontSize: '1.5rem', 
         color: '#d63384', 
         marginBottom: '10px',
         fontWeight: 'bold' 
@@ -421,7 +421,7 @@ function App() {
       <p style={{ margin: '5px 0', fontSize: '0.9rem' }}>✉️ info@bloomandpetal.com</p>
     </div>
 
-    {/* දකුණු පැත්ත - Social Media Icons (Direct SVG) */}
+    {/* Social Media Icons (Direct SVG) */}
 <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
   
   {/* Facebook */}
